@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD054E4"
+    android:orientation="vertical"
+    tools:context=".Settings">
+
+
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:gravity="top"
+        android:padding="30dp"
+        android:switchPadding="40dp"
+        android:text="Voice "
+        android:textColor="#F6F5F5"
+        android:textSize="20sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:padding="30dp"
+        android:switchPadding="40dp"
+        android:text=" Notifications"
+        android:textColor="#FFFCFC"
+        android:textSize="20sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="50dp"
+        android:text="Re-Set"
+        android:textSize="20sp" />
+
+</LinearLayout>

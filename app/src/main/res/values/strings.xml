@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidFinalProject2</string>
+
+
+    <string-array name="country">
+        <item>jordan</item>
+        <item>palestine</item>
+        <item>Gaza</item>
+        <item>Egypt</item>
+
+    </string-array>
+</resources>

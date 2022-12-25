@@ -27,12 +27,15 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="40dp"
-        android:backgroundTint="@drawable/shape_btn_btn"
         android:background="@drawable/shape_btn_btn"
+        android:backgroundTint="@drawable/shape_btn_btn"
 
+        android:drawableEnd="@android:drawable/ic_media_play"
+
+        android:drawablePadding="10dp"
+        android:padding="20dp"
         android:text="start playing"
         android:textColor="@color/white"
-
         android:textSize="20sp" />
 
 
@@ -41,10 +44,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="40dp"
-        android:textColor="@color/white"
-        android:text="Settings"
-        android:backgroundTint="@drawable/shape_btn_btn"
         android:background="@drawable/shape_btn_btn"
+        android:backgroundTint="@drawable/shape_btn_btn"
+        android:drawableEnd="@android:drawable/stat_notify_more"
+        android:padding="20dp"
+        android:text="Settings"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -52,10 +57,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="40dp"
-        android:backgroundTint="@drawable/shape_btn_btn"
         android:background="@drawable/shape_btn_btn"
-        android:textColor="@color/white"
+        android:backgroundTint="@drawable/shape_btn_btn"
+        android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
+        android:padding="20dp"
         android:text="Log out"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
 </LinearLayout>

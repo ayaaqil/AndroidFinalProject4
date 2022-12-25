@@ -11,22 +11,31 @@ import android.view.animation.AnimationUtils;
 import com.example.androidfinalproject2.databinding.ActivitySplashSecrenBinding;
 
 public class Splash_Secren extends AppCompatActivity {
+    ActivitySplashSecrenBinding binding;
+    Animation top, bottom;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_secren);
+        binding=ActivitySplashSecrenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        top=AnimationUtils.loadAnimation(this,R.anim.top_splash);
+        bottom=AnimationUtils.loadAnimation(this,R.anim.bottom_splash);
+
+        binding.imageView.setAnimation(top);
+        binding.textView2.setAnimation(bottom);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(Splash_Secren.this, MainActivity.class);
+                Intent i = new Intent(Splash_Secren.this, Home_Activity.class);
                 startActivity(i);
                 // close this activity
                 finish();
             }
-        }, 3000);
+        }, 5000);
     }
 }

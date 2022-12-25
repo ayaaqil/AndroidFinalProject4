@@ -20,15 +20,21 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    ViewModel mvm;
+    ViewModel vm;
     String etEmailaddress;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        mvm =new ViewModelProvider(this).get(ViewModel.class);
+
+
+        vm =new ViewModelProvider(this).get(ViewModel.class);
+        //vm.insertUser(Users);
+
 
         ActivityResultLauncher<String> arl =
                 registerForActivityResult(new ActivityResultContracts.GetContent()
@@ -83,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
       binding.btnSave.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+
+
               Intent intent=new Intent(getBaseContext(),Home_Activity.class);
               startActivity(intent);
           }

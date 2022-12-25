@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#D054E4"
+    android:background="#529EA8"
     android:orientation="vertical"
 
 
@@ -18,8 +18,8 @@
         android:layout_height="250dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="188dp"
-        android:background="#D054E4"
-        android:backgroundTint="#D054E4"
+        android:background="#529EA8"
+        android:backgroundTint="#529EA8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img" />

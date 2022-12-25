@@ -4,12 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1265" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/btn1_shape.xml" value="0.1355" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/btn_shape.xml" value="0.1355" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/imge.xml" value="0.1265" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/shape_app.xml" value="0.1265" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/shape_bbutn.xml" value="0.1355" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/shape_btn_btn.xml" value="0.1355" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/shape_et.xml" value="0.1275" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/shape_imge.xml" value="0.1355" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/splash_grandate_bkg.xml" value="0.1355" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/splsh_bkg.xml" value="0.1" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/switch_shape.xml" value="0.1355" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/drawable/text_splash_shape.xml" value="0.1265" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/activity_levels.xml" value="0.20416666666666666" />
@@ -18,7 +24,8 @@
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/activity_settings.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/activity_splash_secren.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/activity_stages.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/question_item.xml" value="0.1" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/question_item.xml" value="0.22" />
+        <entry key="..\:/Users/mcc/AndroidStudioProjects/AndroidFinalProject2/app/src/main/res/layout/ture_falsh_item.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

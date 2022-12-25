@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFD054E4"
+    android:background="#529EA8"
     tools:context=".ActivityLevels">
 
 
@@ -15,36 +15,40 @@
         android:layout_marginTop="16dp"
 
         android:layout_marginEnd="45dp"
-        android:backgroundTint="#FFD054E4"
+        android:backgroundTint="#529EA8"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck"
         tools:src="@android:drawable/btn_star_big_on" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_margin="100dp"
         android:layout_marginTop="100dp"
-        android:backgroundTint="#6CAADC"
         android:text="Level1"
         android:textSize="30sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@drawable/shape_btn_btn"
+        android:background="@drawable/shape_btn_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="350dp"
 
         android:layout_height="100dp"
         android:layout_margin="100dp"
         android:layout_marginTop="222dp"
-        android:backgroundTint="#6CAADC"
         android:text="Level2"
+        android:textColor="@color/white"
+        android:backgroundTint="@drawable/shape_btn_btn"
+        android:background="@drawable/shape_btn_btn"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -59,7 +63,7 @@
         android:layout_marginEnd="16dp"
         android:text="0"
         android:textColor="#FBF5F5"
-        android:textSize="25sp"
+        android:textSize="35sp"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

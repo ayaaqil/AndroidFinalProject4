@@ -18,6 +18,10 @@ public class Users {
     String gender;
     String country;
 
+
+
+
+
     public Users(int userId, String userName, String email, Date birthDate, String gender, String country) {
         this.userId = userId;
         this.userName = userName;

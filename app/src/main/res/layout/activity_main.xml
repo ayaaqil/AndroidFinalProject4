@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="#FFD054E4"
+    android:background="#529EA8"
     tools:context=".MainActivity">
     <androidx.appcompat.widget.AppCompatImageView
 
@@ -16,11 +16,9 @@
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        android:background="@drawable/imge"
+        app:srcCompat="@drawable/img_2"
 
-
-        />
+       />
 
 
     <EditText
@@ -123,17 +121,18 @@
 
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_save"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:backgroundTint="#6CAADC"
+        android:backgroundTint="#BC466E"
         android:gravity="center"
         android:minHeight="48dp"
         android:paddingStart="20dp"
         android:text="save"
+        android:textSize="20sp"
         android:textColor="#F5F7F8"
         android:textColorHint="#4A58AA"
         tools:ignore="TouchTargetSizeCheck" />

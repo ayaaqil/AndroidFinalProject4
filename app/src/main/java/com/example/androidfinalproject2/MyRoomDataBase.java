@@ -10,11 +10,13 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Users.class}, version = 1, exportSchema = false)
+@Database(entities = {Users.class,Levels.class,Game_style.class,Puzzles.class}, version = 1, exportSchema = false)
 public abstract class MyRoomDataBase extends RoomDatabase {
 
     public abstract UserDao daoUser();
-
+    public abstract LevelDoa daoLevel();
+    public abstract GameStyleDoa daoGameStyle();
+    public abstract PuzzlesDoa daoPuzzles();
 
     private static volatile MyRoomDataBase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;

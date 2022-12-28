@@ -3,6 +3,7 @@ package com.example.androidfinalproject2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -25,6 +26,12 @@ public class Splash_Secren extends AppCompatActivity {
 
         binding.imageView.setAnimation(top);
         binding.textView2.setAnimation(bottom);
+        Intent intent = new Intent(getApplicationContext(), MyService.class);
+        boolean isplaying = false;
+        if(!isplaying){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startService(intent);
+            }}
 
         new Handler().postDelayed(new Runnable() {
             @Override

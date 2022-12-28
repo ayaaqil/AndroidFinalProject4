@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -13,15 +14,16 @@ import java.util.List;
 public class Repository {
     private UserDao userDao;
     private LevelDoa levelDoa;
-    private GameStyleDoa gameStyleDoa;
+    private PatternDao patternDao;
     private PuzzlesDoa puzzlesDoa;
 
 
     Repository(Application application) {
         MyRoomDataBase db = MyRoomDataBase.getDatabase(application);
         userDao = db.daoUser();
-        levelDoa= (LevelDoa) db.daoLevel();
-        gameStyleDoa= db.daoGameStyle();
+        levelDoa=  db.daoLevel();
+        patternDao= db.daoPattern();
+        puzzlesDoa=db.daoPuzzles();
 
     }
 
@@ -99,37 +101,39 @@ public class Repository {
 
 
 
-    void insertGameStyle(Game_style game_style){
-        MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                gameStyleDoa.insertGameStyle(game_style);
-            }
-        });
-    }
 
-    void updateGameStyle(Game_style game_style){
+    void insertPattern(pattern pattern){
         MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
-                gameStyleDoa.updateGameStyle(game_style);
+                patternDao.insertPattern(pattern);
             }
         });
     }
 
 
-    void deleteGameStyle(Game_style game_style){
+    void updatePattern(Pattern pattern){
         MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
-                gameStyleDoa.deleteGameStyle(game_style);
+                patternDao.updatePattern(pattern);
             }
         });
     }
 
 
-    LiveData<List<Game_style>> getAllGameStyle(){
-        return gameStyleDoa.getAllGameStyle();
+    void deletePattern(Pattern pattern){
+        MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                patternDao.deletePattern(pattern);
+            }
+        });
+    }
+
+    LiveData<List<Pattern>>getAllPattern(){
+        return patternDao.getAllPattern();
+
     }
 
 

@@ -5,52 +5,50 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity(foreignKeys = {@ForeignKey(entity = Levels.class, parentColumns = {"LevelId"}
-        ,childColumns = {"Level_id"},onUpdate = ForeignKey.CASCADE,onDelete = ForeignKey.CASCADE),})
+        ,childColumns = {"Level_id"},onUpdate = ForeignKey.CASCADE,onDelete = ForeignKey.CASCADE),
+@ForeignKey(entity = pattern.class,parentColumns = {"pattern_id"},
+        childColumns = {"pattern_id"},onUpdate = ForeignKey.CASCADE,
+onDelete = ForeignKey.CASCADE)
+})
 public class Puzzles {
     @PrimaryKey(autoGenerate = true)
     int puzzles_id;
-    String puzzles;
+   String title;
     String ans1;
     String ans2;
     String ans3;
     String ans4;
     String ans_ture;
-    int score_id;
+    int points;
     int Level_id;
-    int timer;
-    String style_ques;
-    String text;
+    int duration;
+    int pattern_id;
+    String hint;
+
+
+
+ 
+
+    public Puzzles(String title, String ans1, String ans2, String ans3, String ans4, String ans_ture, int points, int level_id, int duration, int pattern_id, String hint) {
+        this.title = title;
+        this.ans1 = ans1;
+        this.ans2 = ans2;
+        this.ans3 = ans3;
+        this.ans4 = ans4;
+        this.ans_ture = ans_ture;
+        this.points = points;
+        Level_id = level_id;
+        this.duration = duration;
+        this.pattern_id = pattern_id;
+        this.hint = hint;
+    }
 
     public Puzzles() {
+        
+        
     }
 
-    public Puzzles(String puzzles, String ans1, String ans2, String ans3, String ans4, String ans_ture, int score_id, int level_id, int timer, String style_ques, String text) {
-        this.puzzles = puzzles;
-        this.ans1 = ans1;
-        this.ans2 = ans2;
-        this.ans3 = ans3;
-        this.ans4 = ans4;
-        this.ans_ture = ans_ture;
-        this.score_id = score_id;
-        Level_id = level_id;
-        this.timer = timer;
-        this.style_ques = style_ques;
-        this.text = text;
-    }
-
-    public Puzzles(int puzzles_id, String puzzles, String ans1, String ans2, String ans3, String ans4, String ans_ture, int score_id, int level_id, int timer, String style_ques, String text) {
-        this.puzzles_id = puzzles_id;
-        this.puzzles = puzzles;
-        this.ans1 = ans1;
-        this.ans2 = ans2;
-        this.ans3 = ans3;
-        this.ans4 = ans4;
-        this.ans_ture = ans_ture;
-        this.score_id = score_id;
-        Level_id = level_id;
-        this.timer = timer;
-        this.style_ques = style_ques;
-        this.text = text;
+    public Puzzles(String title, String answer_1, String answer_2, String answer_3, String answer_4, String true_answer, int points, int duration, String hint) {
     }
 
     public int getPuzzles_id() {
@@ -61,12 +59,12 @@ public class Puzzles {
         this.puzzles_id = puzzles_id;
     }
 
-    public String getPuzzles() {
-        return puzzles;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPuzzles(String puzzles) {
-        this.puzzles = puzzles;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAns1() {
@@ -109,12 +107,12 @@ public class Puzzles {
         this.ans_ture = ans_ture;
     }
 
-    public int getScore_id() {
-        return score_id;
+    public int getPoints() {
+        return points;
     }
 
-    public void setScore_id(int score_id) {
-        this.score_id = score_id;
+    public void setPoints(int points) {
+        this.points = points;
     }
 
     public int getLevel_id() {
@@ -125,27 +123,27 @@ public class Puzzles {
         Level_id = level_id;
     }
 
-    public int getTimer() {
-        return timer;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setTimer(int timer) {
-        this.timer = timer;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
-    public String getStyle_ques() {
-        return style_ques;
+    public int getPattern_id() {
+        return pattern_id;
     }
 
-    public void setStyle_ques(String style_ques) {
-        this.style_ques = style_ques;
+    public void setPattern_id(int pattern_id) {
+        this.pattern_id = pattern_id;
     }
 
-    public String getText() {
-        return text;
+    public String getHint() {
+        return hint;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setHint(String hint) {
+        this.hint = hint;
     }
 }

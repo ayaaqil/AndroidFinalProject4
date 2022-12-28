@@ -5,6 +5,11 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
+import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -49,22 +54,24 @@ public class ViewModel extends AndroidViewModel {
         return myRepostory.getAllLevel();
     }
 
-    void insertGameStyle(Game_style game_style){
-        myRepostory.insertGameStyle(game_style);
-    }
 
-    void updateGameStyle(Game_style game_style){
-        myRepostory.updateGameStyle(game_style);
+    void insertPattern(pattern pattern){
+        myRepostory.insertPattern(pattern);
     }
 
 
-    void deleteGameStyle(Game_style game_style){
-        myRepostory.deleteGameStyle(game_style);
+
+    void updatePattern(Pattern pattern){
+        myRepostory.updatePattern(pattern);
     }
 
 
-    LiveData<List<Game_style>> getAllGameStyle(){
-        return myRepostory.getAllGameStyle();
+    void deletePattern(Pattern pattern){
+        myRepostory.deletePattern(pattern);
+    }
+
+   LiveData<List<Pattern>>getAllPattern(){
+       return myRepostory.getAllPattern();
     }
 
 

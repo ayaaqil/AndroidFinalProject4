@@ -1,7 +1,9 @@
 package com.example.androidfinalproject2;
 
-import java.util.ArrayList;
+import androidx.room.Entity;
 
+import java.util.ArrayList;
+@Entity
 public class questions {
     ArrayList<questions> questionsArrayList;
    pattern pattern;

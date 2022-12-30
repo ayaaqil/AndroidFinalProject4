@@ -1,4 +1,4 @@
-package com.example.androidfinalproject2;
+package com.example.androidfinalproject2.RoomDataBase;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+
 @Dao
 public interface PuzzlesDoa {
 

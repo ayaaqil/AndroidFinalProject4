@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.androidfinalproject2.RoomDataBase.Puzzles;
+import com.example.androidfinalproject2.RoomDataBase.ViewModel;
 import com.example.androidfinalproject2.databinding.ActivityHomeBinding;
 
 import org.json.JSONArray;
@@ -32,23 +34,10 @@ public class Home_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityHomeBinding.inflate(getLayoutInflater());
       setContentView(binding.getRoot());
-
-         //JobService
-
-         JobInfo jobInfo=null;
-         ComponentName componentName=new ComponentName(getBaseContext(),MyJobService.class);
-
-         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-             jobInfo=new JobInfo.Builder(101,componentName)
-
-                     .setPeriodic(24*60*60*1000,5*60*1000)
+         onClick();
 
 
-                     .build();
-         }
-         JobScheduler scheduler=
-                 (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
-         scheduler.schedule(jobInfo);
+
 
 
       String jsonString=UtilString.readFormats(getApplicationContext(),"puzzleGameData.json");
@@ -148,9 +137,9 @@ public class Home_Activity extends AppCompatActivity {
                     String pattern_name=jsonobjectpattern.getString("pattern_name");
 
                     Log.d("databaseTest","onCreate : in here"+pattern_id+pattern_name);
-                    viewModel.insertPuzzles(new Puzzles(title,answer_1,answer_2,
-                            answer_3,answer_4,true_answer,points
-                    ,duration,hint));
+//                    viewModel.insertPuzzles(new Puzzles(title,answer_1,answer_2,
+//                            answer_3,answer_4,true_answer,points
+//                    ,duration,hint));
                 }
                 
                 
@@ -171,4 +160,21 @@ public class Home_Activity extends AppCompatActivity {
         stopService(intent);
     }
 
-}
+  //JOB SERVICE
+    private void onClick(){
+        JobInfo jobInfo=null;
+        ComponentName componentName=new ComponentName(getBaseContext(),MyJobService.class);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            jobInfo=new JobInfo.Builder(101,componentName)
+
+                    .setPeriodic(24*60*60*1000,5*60*1000)
+
+
+                    .build();
+        }
+        JobScheduler scheduler=
+                (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+        scheduler.schedule(jobInfo);
+
+}}

@@ -8,6 +8,8 @@ public class questions {
     ArrayList<questions> questionsArrayList;
    pattern pattern;
 
+    
+
     public questions(com.example.androidfinalproject2.pattern pattern) {
         this.pattern = pattern;
     }

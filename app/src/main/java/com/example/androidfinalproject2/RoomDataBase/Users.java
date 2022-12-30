@@ -1,26 +1,21 @@
-package com.example.androidfinalproject2;
-
+package com.example.androidfinalproject2.RoomDataBase;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
 import java.util.Date;
 @Entity
 @TypeConverters({DataConvirter.class})
+
 public class Users {
-@PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = true)
     int userId;
     String userName;
     String email;
     Date birthDate;
     String gender;
     String country;
-
-
-
-
 
     public Users(int userId, String userName, String email, Date birthDate, String gender, String country) {
         this.userId = userId;

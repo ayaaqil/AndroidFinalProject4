@@ -1,4 +1,4 @@
-package com.example.androidfinalproject2;
+package com.example.androidfinalproject2.RoomDataBase;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,6 +6,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.androidfinalproject2.RoomDataBase.Levels;
 
 import java.util.List;
 @Dao

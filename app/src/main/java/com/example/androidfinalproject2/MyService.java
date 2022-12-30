@@ -26,7 +26,7 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
          super.onStartCommand(intent, flags, startId);
-//
+
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel channel=new NotificationChannel(CHANNEL_ID
@@ -43,8 +43,7 @@ public class MyService extends Service {
         NotificationManagerCompat managerCompat=NotificationManagerCompat.from(getApplicationContext());
         startForeground(1,builder.build());
         mediaPlayer.start();
-//         لو طفاها الاندرويد لازم انت تشغلها من تانيreturn START_NOT_STICKY;
-//   بترجع تشتغل لحالها وبتلاخد الانتنت معهاreturn START_REDELIVER_INTENT;//  بترجع تشتغل لحالها من غير ما تاخد ال انتنت تاني
+
         return START_NOT_STICKY;}
 
 

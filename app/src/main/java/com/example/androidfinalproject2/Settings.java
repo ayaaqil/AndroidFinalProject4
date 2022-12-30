@@ -17,7 +17,7 @@ import com.example.androidfinalproject2.databinding.ActivitySettingsBinding;
 public class Settings extends AppCompatActivity {
     ActivitySettingsBinding binding;
     boolean isplay=false;
-    boolean Notifications;
+    boolean Notifications=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,18 +9,20 @@
     tools:context=".Home_Activity">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/img_2"
-
-
-
+        android:background="@drawable/profile_"
+        android:backgroundTint="@color/white"
 
         />
+
+
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start"
@@ -34,7 +36,7 @@
 
         android:drawablePadding="10dp"
         android:padding="20dp"
-        android:text="start playing"
+        android:text="@string/start_playing"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -48,7 +50,7 @@
         android:backgroundTint="@drawable/shape_btn_btn"
         android:drawableEnd="@android:drawable/stat_notify_more"
         android:padding="20dp"
-        android:text="Settings"
+        android:text="@string/settings"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -61,7 +63,7 @@
         android:backgroundTint="@drawable/shape_btn_btn"
         android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
         android:padding="20dp"
-        android:text="Log out"
+        android:text="@string/log_out"
         android:textColor="@color/white"
         android:textSize="20sp" />
 

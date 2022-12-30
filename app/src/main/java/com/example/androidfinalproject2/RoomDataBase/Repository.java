@@ -1,47 +1,30 @@
-package com.example.androidfinalproject2;
+package com.example.androidfinalproject2.RoomDataBase;
 
 import android.app.Application;
 
+
 import androidx.lifecycle.LiveData;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
 
 import java.util.List;
 
 public class Repository {
-    private UserDao userDao;
+    private UserDoa userDao;
     private LevelDoa levelDoa;
     private PatternDao patternDao;
     private PuzzlesDoa puzzlesDoa;
 
-
-    Repository(Application application) {
-        MyRoomDataBase db = MyRoomDataBase.getDatabase(application);
-        userDao = db.daoUser();
-        levelDoa=  db.daoLevel();
-        patternDao= db.daoPattern();
+    Repository(Application application){
+        MyRoomDataBase db=MyRoomDataBase.getDatabase(application);
+        userDao=db.daoUser();
+        levelDoa= db.daoLevel();
+        patternDao=  db.daoPattern();
         puzzlesDoa=db.daoPuzzles();
-
     }
-
     void insertUser(Users users){
         MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 userDao.insertUser(users);
-            }
-        });
-
-    }
-
-    void deleteUser(Users users){
-        MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                userDao.deleteUser(users);
             }
         });
 
@@ -58,9 +41,19 @@ public class Repository {
     }
 
 
-    LiveData<List<Users>> getAllUsers(){
-        return userDao.getAllUser();
+    void deleteUser(Users users){
+        MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                userDao.deleteUser(users);
+            }
+        });
 
+    }
+
+
+    LiveData<List<Users>> getAllUser(){
+        return userDao.getAllUser();
     }
 
 
@@ -71,15 +64,13 @@ public class Repository {
                 levelDoa.insertLevel(levels);
             }
         });
-
     }
-
 
     void updateLevel(Levels levels){
         MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
-                levelDoa.updateLevel(levels);
+                levelDoa.deleteLevel(levels);
             }
         });
     }
@@ -99,10 +90,7 @@ public class Repository {
         return levelDoa.getAllLevel();
     }
 
-
-
-
-    void insertPattern(pattern pattern){
+    void insertPattern(Pattern pattern){
         MyRoomDataBase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
@@ -131,9 +119,9 @@ public class Repository {
         });
     }
 
-    LiveData<List<Pattern>>getAllPattern(){
-        return patternDao.getAllPattern();
 
+    LiveData<List<Pattern>> getAllPattern(){
+        return patternDao.getAllPattern();
     }
 
 
@@ -168,9 +156,6 @@ public class Repository {
     LiveData<List<Puzzles>> getAllPuzzles(){
         return puzzlesDoa.getAllPuzzles();
     }
-
-
-
 
 
 }

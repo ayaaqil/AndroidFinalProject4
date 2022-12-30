@@ -1,4 +1,4 @@
-package com.example.androidfinalproject2;
+package com.example.androidfinalproject2.RoomDataBase;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -9,8 +9,7 @@ import androidx.room.Update;
 
 import java.util.List;
 @Dao
-public interface UserDao {
-
+public interface UserDoa {
     @Insert
     void insertUser(Users users);
     @Update

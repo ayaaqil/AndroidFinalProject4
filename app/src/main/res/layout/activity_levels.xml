@@ -4,66 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#529EA8"
     tools:context=".ActivityLevels">
 
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-
-        android:layout_marginEnd="45dp"
-        android:backgroundTint="#529EA8"
-
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#529EA8"
+        android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:src="@android:drawable/btn_star_big_on" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_margin="100dp"
-        android:layout_marginTop="100dp"
-        android:text="Level1"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        android:backgroundTint="@drawable/shape_btn_btn"
-        android:background="@drawable/shape_btn_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="350dp"
-
-        android:layout_height="100dp"
-        android:layout_margin="100dp"
-        android:layout_marginTop="222dp"
-        android:text="Level2"
-        android:textColor="@color/white"
-        android:backgroundTint="@drawable/shape_btn_btn"
-        android:background="@drawable/shape_btn_btn"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="0"
-        android:textColor="#FBF5F5"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

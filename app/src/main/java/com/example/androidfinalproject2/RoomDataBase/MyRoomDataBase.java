@@ -1,4 +1,4 @@
-package com.example.androidfinalproject2;
+package com.example.androidfinalproject2.RoomDataBase;
 
 
 import android.content.Context;
@@ -10,10 +10,10 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Users.class,Levels.class,Pattern.class,Puzzles.class}, version = 1, exportSchema = false)
+@Database(entities = {Users.class, Levels.class, Pattern.class, Puzzles.class}, version = 1, exportSchema = false)
 public abstract class MyRoomDataBase extends RoomDatabase {
 
-    public abstract UserDao daoUser();
+    public abstract UserDoa daoUser();
     public abstract LevelDoa daoLevel();
     public abstract PatternDao daoPattern();
     public abstract PuzzlesDoa daoPuzzles();

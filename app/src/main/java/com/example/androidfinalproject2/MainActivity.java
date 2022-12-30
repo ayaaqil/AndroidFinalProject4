@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.DatePickerDialog;
@@ -13,10 +14,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 
+import com.example.androidfinalproject2.RoomDataBase.Users;
 import com.example.androidfinalproject2.databinding.ActivityMainBinding;
 
 import java.time.Year;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
@@ -33,7 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         vm =new ViewModelProvider(this).get(ViewModel.class);
+        String name=binding.etName.getText().toString();
+        String email=binding.etEmailaddress.getText().toString();
+        String birthDate=binding.etBirth.getText().toString();
+        String famale=binding.rbFamale.getText().toString();
+        String male=binding.rbMale.getText().toString();
 
+     // Users users=(new Users(name,email,birthDate,famale,male));
+        //vm.insertUser(users);
         //vm.insertUser(Users);
 
 

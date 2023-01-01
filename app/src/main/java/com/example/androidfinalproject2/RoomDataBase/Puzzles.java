@@ -5,16 +5,14 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 
-
 @Entity(foreignKeys = {@ForeignKey(entity = Levels.class, parentColumns = {"LevelId"}
-        ,childColumns = {"Level_id"},onUpdate = ForeignKey.CASCADE,onDelete = ForeignKey.CASCADE),
-        @ForeignKey(entity = Pattern.class,parentColumns = {"pattern_id"},
-                childColumns = {"pattern_id"},onUpdate = ForeignKey.CASCADE,
+        , childColumns = {"Level_id"}, onUpdate = ForeignKey.CASCADE, onDelete = ForeignKey.CASCADE),
+        @ForeignKey(entity = Pattern.class, parentColumns = {"pattern_id"},
+                childColumns = {"pattern_id"}, onUpdate = ForeignKey.CASCADE,
                 onDelete = ForeignKey.CASCADE)})
 
 public class Puzzles {
     @PrimaryKey(autoGenerate = true)
-
     int puzzles_id;
     String title;
     String ans1;
@@ -29,7 +27,9 @@ public class Puzzles {
     String hint;
 
     public Puzzles() {
-        this.puzzles_id = puzzles_id;
+    }
+
+    public Puzzles(String title, String ans1, String ans2, String ans3, String ans4, String ans_ture, int points, int level_id, int duration, int pattern_id, String hint) {
         this.title = title;
         this.ans1 = ans1;
         this.ans2 = ans2;
@@ -37,13 +37,11 @@ public class Puzzles {
         this.ans4 = ans4;
         this.ans_ture = ans_ture;
         this.points = points;
-       this. Level_id = Level_id;
+        Level_id = level_id;
         this.duration = duration;
         this.pattern_id = pattern_id;
         this.hint = hint;
     }
-
-
 
     public int getPuzzles_id() {
         return puzzles_id;

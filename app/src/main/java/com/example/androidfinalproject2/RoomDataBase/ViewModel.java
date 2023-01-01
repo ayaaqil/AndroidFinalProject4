@@ -10,88 +10,88 @@ import java.util.List;
 
 public class ViewModel extends AndroidViewModel {
     private Repository myRepository;
+
     public ViewModel(@NonNull Application application) {
         super(application);
-        myRepository=new Repository(application);
+        myRepository = new Repository(application);
     }
 
-    void insertUser(Users users){
-       myRepository.insertUser(users);
-
-    }
-
-    void updateUser(Users users){
-      myRepository.updateUser(users);
+    public void insertUser(Users users) {
+        myRepository.insertUser(users);
 
     }
 
-
-    void deleteUser(Users users){
-    myRepository.deleteUser(users);
+    public void updateUser(Users users) {
+        myRepository.updateUser(users);
 
     }
 
 
-    LiveData<List<Users>> getAllUser(){
+    public void deleteUser(Users users) {
+        myRepository.deleteUser(users);
+
+    }
+
+
+    public LiveData<List<Users>> getAllUser() {
         return myRepository.getAllUser();
     }
 
-    void insertLevel(Levels levels){
-      myRepository.insertLevel(levels);
+    public void insertLevel(Levels levels) {
+        myRepository.insertLevel(levels);
     }
 
-    void updateLevel(Levels levels){
-      myRepository.updateLevel(levels);
-    }
-
-
-    void deleteLevel(Levels levels){
-   myRepository.deleteLevel(levels);
+    public void updateLevel(Levels levels) {
+        myRepository.updateLevel(levels);
     }
 
 
-    LiveData<List<Levels>> getAllLevel(){
+    public void deleteLevel(Levels levels) {
+        myRepository.deleteLevel(levels);
+    }
+
+
+    public LiveData<List<Levels>> getAllLevel() {
         return myRepository.getAllLevel();
     }
 
-    void insertPattern(Pattern pattern){
-      myRepository.insertPattern(pattern);
+    public void insertPattern(Pattern pattern) {
+        myRepository.insertPattern(pattern);
     }
 
 
-    void updatePattern(Pattern pattern){
-     myRepository.updatePattern(pattern);
+    public void updatePattern(Pattern pattern) {
+        myRepository.updatePattern(pattern);
     }
 
 
-    void deletePattern(Pattern pattern){
-       myRepository.deletePattern(pattern);
+    public void deletePattern(Pattern pattern) {
+        myRepository.deletePattern(pattern);
     }
 
 
-    LiveData<List<Pattern>> getAllPattern(){
+    public LiveData<List<Pattern>> getAllPattern() {
         return myRepository.getAllPattern();
     }
 
 
-    public void insertPuzzles(Puzzles puzzles){
+    public void insertPuzzles(Puzzles puzzles) {
 
         myRepository.insertPuzzles(puzzles);
     }
 
-    void updatePuzzles(Puzzles puzzles){
-     myRepository.updatePuzzles(puzzles);
+    public void updatePuzzles(Puzzles puzzles) {
+        myRepository.updatePuzzles(puzzles);
     }
 
 
-    void deletePuzzles(Puzzles puzzles){
-      myRepository.deletePuzzles(puzzles);
+    public void deletePuzzles(Puzzles puzzles) {
+        myRepository.deletePuzzles(puzzles);
     }
 
-    LiveData<List<Puzzles>> getAllPuzzles(){
+    public LiveData<List<Puzzles>> getAllPuzzles() {
         return myRepository.getAllPuzzles();
     }
-
 
 
 }

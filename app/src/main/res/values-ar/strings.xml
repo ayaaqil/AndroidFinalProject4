@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الالغاز</string>
+    <string name="start_playing">ابدا اللعب</string>
+    <string name="settings">
+        الاعدادات
+    </string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="level1">
+        المرحلة الاولى
+    </string>
+    <string name="level2">
+        المرحلة التانية
+    </string>
+    <string name="full_name">الاسم</string>
+    <string name="email_address">الايميل</string>
+    <string name="birthdate">
+        تاريخ الميلاد
+    </string>
+    <string name="male">
+        انثى
+    </string>
+    <string name="female">دكر</string>
+    <string name="save">حفظ</string>
+</resources>

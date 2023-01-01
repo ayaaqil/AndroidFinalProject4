@@ -63,7 +63,7 @@ public class ChooseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-                        title = getArguments().getString(PUZZLES_TITLE);
+            title = getArguments().getString(PUZZLES_TITLE);
             answer_1 = getArguments().getString(PUZZLES_ANS1);
             answer_2 = getArguments().getString(PUZZLES_ANS2);
             answer_3 = getArguments().getString(PUZZLES_ANS3);

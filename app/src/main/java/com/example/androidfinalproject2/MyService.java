@@ -41,7 +41,8 @@ public class MyService extends Service {
                 CHANNEL_ID);
 
         NotificationManagerCompat managerCompat=NotificationManagerCompat.from(getApplicationContext());
-        startForeground(1,builder.build());
+       startForeground(1,builder.build());
+        startService(intent1);
         mediaPlayer.start();
 
         return START_NOT_STICKY;}

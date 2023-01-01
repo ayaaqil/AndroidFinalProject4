@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 
 import com.example.androidfinalproject2.Fragments.ChooseFragment;
+import com.example.androidfinalproject2.RoomDataBase.Puzzles;
 import com.example.androidfinalproject2.databinding.ActivityLevelsBinding;
 
 import java.util.ArrayList;
@@ -19,7 +20,14 @@ public class ActivityLevels extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityLevelsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+//         fragmentArrayList.add(ChooseFragment.newInstance("ffvf","ef",
+//                 "wer","wef","ef","ff",3,"ef","ef"));
 
-        //fragmentArrayList.add(ChooseFragment.newInstance())
+        AdapterViewPager adapterViewPager=new AdapterViewPager(this,fragmentArrayList);
+        binding.VP.setAdapter(adapterViewPager);
+
+
     }
+
+
 }

@@ -2,7 +2,9 @@ package com.example.androidfinalproject2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.androidfinalproject2.databinding.ActivityPlayingBinding;
 
@@ -16,6 +18,14 @@ public class Playing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityPlayingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),ActivityLevels.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

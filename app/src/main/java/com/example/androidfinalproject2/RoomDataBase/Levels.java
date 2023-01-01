@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Levels {
-    @PrimaryKey(autoGenerate = true)
-            @ColumnInfo(name = "LevelId")
+    @PrimaryKey
+    @ColumnInfo(name = "LevelId")
     int Level_id;
     int Level_score;
 

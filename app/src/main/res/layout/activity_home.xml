@@ -24,16 +24,13 @@
 
 
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_start"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="40dp"
-        android:background="@drawable/shape_btn_btn"
-        android:backgroundTint="@drawable/shape_btn_btn"
-
+        android:background="@drawable/shape_et"
         android:drawableEnd="@android:drawable/ic_media_play"
-
         android:drawablePadding="10dp"
         android:padding="20dp"
         android:text="@string/start_playing"
@@ -41,26 +38,24 @@
         android:textSize="20sp" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_settinges"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="40dp"
-        android:background="@drawable/shape_btn_btn"
-        android:backgroundTint="@drawable/shape_btn_btn"
+        android:background="@drawable/shape_et"
         android:drawableEnd="@android:drawable/stat_notify_more"
         android:padding="20dp"
         android:text="@string/settings"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_out"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="40dp"
-        android:background="@drawable/shape_btn_btn"
-        android:backgroundTint="@drawable/shape_btn_btn"
+        android:background="@drawable/shape_et"
         android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
         android:padding="20dp"
         android:text="@string/log_out"

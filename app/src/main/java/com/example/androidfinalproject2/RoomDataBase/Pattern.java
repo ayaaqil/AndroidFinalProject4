@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Pattern {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     int pattern_id;
     String pattern_name;
 

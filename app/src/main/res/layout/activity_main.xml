@@ -10,9 +10,9 @@
     tools:context=".MainActivity">
     <ImageView
 
-        android:layout_width="@dimen/_100sdp"
+        android:layout_width="100dp"
         android:id="@+id/imge_main"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_height="100dp"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
@@ -132,9 +132,10 @@
         android:minHeight="48dp"
         android:paddingStart="20dp"
         android:text="@string/save"
-        android:textSize="20sp"
         android:textColor="#F5F7F8"
         android:textColorHint="#4A58AA"
+        android:textSize="20sp"
+
         tools:ignore="TouchTargetSizeCheck" />
 
 

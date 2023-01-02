@@ -13,7 +13,7 @@ import com.example.androidfinalproject2.RoomDataBase.Levels;
 import java.util.List;
 @Dao
 public interface LevelDoa {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertLevel(Levels levels);
     @Update
     void updateLevel(Levels levels);

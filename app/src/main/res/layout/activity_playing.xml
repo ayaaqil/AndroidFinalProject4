@@ -24,7 +24,7 @@
         tools:src="@android:drawable/btn_star_big_on" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/level1"
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_margin="100dp"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/level2"
         android:layout_width="350dp"
 
         android:layout_height="100dp"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/level1" />
 
     <TextView
         android:id="@+id/textView"

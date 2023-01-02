@@ -4,7 +4,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.DatePickerDialog;
@@ -15,16 +15,18 @@ import android.view.View;
 import android.widget.DatePicker;
 
 import com.example.androidfinalproject2.RoomDataBase.Users;
+import com.example.androidfinalproject2.RoomDataBase.ViewModel;
 import com.example.androidfinalproject2.databinding.ActivityMainBinding;
 
 import java.time.Year;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    ViewModel vm;
     String etEmailaddress;
+    com.example.androidfinalproject2.RoomDataBase.ViewModel viewModel;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
 
@@ -35,16 +37,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        vm =new ViewModelProvider(this).get(ViewModel.class);
-        String name=binding.etName.getText().toString();
-        String email=binding.etEmailaddress.getText().toString();
-        String birthDate=binding.etBirth.getText().toString();
-        String famale=binding.rbFamale.getText().toString();
-        String male=binding.rbMale.getText().toString();
+//        viewModel =new ViewModelProvider(this).get(ViewModel.class);
+        viewModel=new ViewModelProvider(this).get(ViewModel.class);
+        viewModel.getAllUser().observe(this, new Observer<List<Users>>() {
+            @Override
+            public void onChanged(List<Users> users) {
+                for (int i = 0; i < users.size(); i++) {
+                    String name=users.get(i).getUserName();
+                    Date date= users.get(i).getBirthDate();
+                    String email=users.get(i).getEmail();
+                    binding.etName.setText(name);
+                    binding.etEmailaddress.setText(email);
+                    binding.etBirth.setText((CharSequence) date);
 
-     // Users users=(new Users(name,email,birthDate,famale,male));
-        //vm.insertUser(users);
-        //vm.insertUser(Users);
+                }
+            }
+        });
+
+
+
+//        String name=binding.etName.getText().toString();
+//        String email=binding.etEmailaddress.getText().toString();
+//        String birthDate=binding.etBirth.getText().toString();
+//        String famale=binding.rbFamale.getText().toString();
+//        String male=binding.rbMale.getText().toString();
+
+//      Users users=(new Users(name,email,birthDate,famale,male));
+//        viewModel.insertUser(users);
+//        viewModel.insertUser(users);
+//
+
+
 
 
         ActivityResultLauncher<String> arl =
@@ -108,5 +131,6 @@ public class MainActivity extends AppCompatActivity {
       });
 
             }
+
 
     }

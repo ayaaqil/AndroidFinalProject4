@@ -12,12 +12,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.androidfinalproject2.RoomDataBase.Levels;
+import com.example.androidfinalproject2.RoomDataBase.Pattern;
+import com.example.androidfinalproject2.RoomDataBase.Puzzles;
+import com.example.androidfinalproject2.RoomDataBase.Users;
+import com.example.androidfinalproject2.RoomDataBase.ViewModel;
 import com.example.androidfinalproject2.databinding.ActivitySettingsBinding;
 
 public class Settings extends AppCompatActivity {
     ActivitySettingsBinding binding;
     boolean isplay=false;
     boolean Notifications=false;
+    ViewModel viewModel;
+    Levels levels;
+    Pattern pattern;
+    Users users;
+    Puzzles puzzles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +92,16 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        binding.btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewModel.deleteLevel(levels);
+                viewModel.deletePattern(pattern);
+                viewModel.deleteUser(users);
+                viewModel.deletePuzzles(puzzles);
+
+            }
+        });
 
 
     }}

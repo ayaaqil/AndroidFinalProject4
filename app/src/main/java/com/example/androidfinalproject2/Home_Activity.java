@@ -1,5 +1,6 @@
 package com.example.androidfinalproject2;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
@@ -10,6 +11,7 @@ import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -36,6 +38,7 @@ public class Home_Activity extends AppCompatActivity {
     JSONArray jsonArray;
     List<Levels> levelsList;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +62,7 @@ public class Home_Activity extends AppCompatActivity {
         });
 
         Intent intent = new Intent(getBaseContext(), MyService.class);
-        startService(intent);
+        startForegroundService(intent);
 
         binding.imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +120,7 @@ public class Home_Activity extends AppCompatActivity {
             }
 //            }
         });
+
 
 
     }

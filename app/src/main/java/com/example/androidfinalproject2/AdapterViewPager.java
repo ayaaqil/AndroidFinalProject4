@@ -12,7 +12,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.ArrayList;
 
 public class AdapterViewPager extends FragmentStateAdapter {
-    ArrayList<Fragment>fragmentArrayList= new ArrayList<>();
+    ArrayList<Fragment>fragmentArrayList;
 
 
     public AdapterViewPager(@NonNull FragmentActivity fragmentActivity,ArrayList<Fragment>fragmentArrayList) {

@@ -14,24 +14,28 @@ public class Users {
     String userName;
     String email;
     Date birthDate;
-    String gender;
-    String country;
+//    String gender;
+//    String country;
 
-    public Users(int userId, String userName, String email, Date birthDate, String gender, String country) {
+    public Users(int userId, String userName, String email, Date birthDate) {
         this.userId = userId;
         this.userName = userName;
         this.email = email;
         this.birthDate = birthDate;
-        this.gender = gender;
-        this.country = country;
+//        this.gender = gender;
+//        this.country = country;
     }
 
-    public Users() {
+    public Users(String userName, String email, Date birthDate) {
         this.userName = userName;
         this.email = email;
         this.birthDate = birthDate;
-        this.gender = gender;
-        this.country = country;
+//        this.gender = gender;
+//        this.country = country;
+    }
+
+    public Users() {
+
     }
 
     public int getUserId() {
@@ -66,19 +70,19 @@ public class Users {
         this.birthDate = birthDate;
     }
 
-    public String getGender() {
-        return gender;
-    }
+//    public String getGender() {
+//        return gender;
+//    }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+//    public void setGender(String gender) {
+//        this.gender = gender;
+//    }
 
-    public String getCountry() {
-        return country;
-    }
+//    public String getCountry() {
+//        return country;
+//    }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+//    public void setCountry(String country) {
+//        this.country = country;
+//    }
 }

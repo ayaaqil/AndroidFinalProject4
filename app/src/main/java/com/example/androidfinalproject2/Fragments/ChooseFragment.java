@@ -23,6 +23,7 @@ public class ChooseFragment extends Fragment {
     private static final String PUZZLES_POINTS = "points";
     private static final String PUZZLES_DURATION = "duration";
     private static final String PUZZLES_HINT = "hint";
+    private  static  final  String PUZZLES_LEVEL_NO="level_no";
 
 
     // TODO: Rename and change types of parameters
@@ -33,15 +34,16 @@ public class ChooseFragment extends Fragment {
     private String answer_4;
     private String true_answer;
     private  int points;
-    private  String duration;
-    private  String hint;
+    private  int duration;
+    private  String  hint;
+    private int level_no;
 
     public ChooseFragment() {
     }
 
 
-    public static ChooseFragment newInstance(String title, String answer_1,String answer_2,String answer_3,
-    String answer_4,String true_answer,int points,String duration,String hint) {
+    public static ChooseFragment newInstance(String title, String answer_1, String answer_2, String answer_3,
+                                             String answer_4, String true_answer, String points, int duration, int hint, int level_no) {
         ChooseFragment fragment = new ChooseFragment();
         Bundle args = new Bundle();
         args.putString(PUZZLES_TITLE, title);
@@ -50,11 +52,10 @@ public class ChooseFragment extends Fragment {
         args.putString(PUZZLES_ANS3, answer_3);
         args.putString(PUZZLES_ANS4, answer_4);
         args.putString(PUZZLES_TRUE, true_answer);
-        args.putInt(PUZZLES_POINTS, points);
-        args.putString(PUZZLES_DURATION, duration);
-        args.putString(PUZZLES_HINT,hint);
-
-
+        args.putInt(PUZZLES_POINTS, Integer.parseInt(points));
+        args.putInt(PUZZLES_DURATION, duration);
+        args.putString(PUZZLES_HINT, String.valueOf(hint));
+        args.putInt(PUZZLES_LEVEL_NO,level_no);
         fragment.setArguments(args);
         return fragment;
     }
@@ -73,7 +74,7 @@ public class ChooseFragment extends Fragment {
             answer_4 = getArguments().getString(PUZZLES_ANS4);
             true_answer = getArguments().getString(PUZZLES_TRUE);
            points = getArguments().getInt(PUZZLES_POINTS);
-           duration = getArguments().getString(PUZZLES_DURATION);
+           duration = getArguments().getInt(PUZZLES_DURATION);
            hint=getArguments().getString(PUZZLES_HINT);
         }
     }
@@ -87,7 +88,6 @@ public class ChooseFragment extends Fragment {
         binding.button4.setText(answer_2);
         binding.button5.setText(answer_3);
         binding.button6.setText(answer_4);
-
         return  binding.getRoot();
 
     }

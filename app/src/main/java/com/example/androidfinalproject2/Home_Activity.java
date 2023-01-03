@@ -36,10 +36,11 @@ public class Home_Activity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     ViewModel viewModel;
     JSONArray jsonArray;
+    boolean isplaying;
     List<Levels> levelsList;
     String jsonString;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,8 +78,14 @@ public class Home_Activity extends AppCompatActivity {
             }
         });
 
-        Intent intent = new Intent(getBaseContext(), MyService.class);
-        startForegroundService(intent);
+//        Intent intent = new Intent(getBaseContext(), MyService.class);
+//        startForegroundService(intent);
+
+        Intent intent = new Intent(getApplicationContext(), MyService.class);
+        if(!isplaying){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startService(intent);
+            }}
 
         binding.imageView2.setOnClickListener(new View.OnClickListener() {
             @Override

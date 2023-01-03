@@ -28,6 +28,14 @@ public class Playing extends AppCompatActivity {
             }
         });
 
+        binding.level2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),ActivityLevels.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

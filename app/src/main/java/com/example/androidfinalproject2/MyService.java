@@ -21,7 +21,7 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        mediaPlayer = MediaPlayer.create(this, R.raw.s);
+        mediaPlayer = MediaPlayer.create(this, R.raw.music2);
     }
 
     @Override

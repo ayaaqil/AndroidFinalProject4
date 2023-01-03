@@ -26,12 +26,7 @@ public class Splash_Secren extends AppCompatActivity {
 
         binding.imageView.setAnimation(top);
         binding.textView2.setAnimation(bottom);
-//        Intent intent = new Intent(getApplicationContext(), MyService.class);
-//        boolean isplaying = false;
-//        if(!isplaying){
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                startService(intent);
-//            }}
+
 
         new Handler().postDelayed(new Runnable() {
             @Override

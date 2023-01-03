@@ -58,16 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//        String name=binding.etName.getText().toString();
-//        String email=binding.etEmailaddress.getText().toString();
-//        String birthDate=binding.etBirth.getText().toString();
-//        String famale=binding.rbFamale.getText().toString();
-//        String male=binding.rbMale.getText().toString();
 
-//      Users users=(new Users(name,email,birthDate,famale,male));
-//        viewModel.insertUser(users);
-//        viewModel.insertUser(users);
-//
 
 
         ActivityResultLauncher<String> arl =

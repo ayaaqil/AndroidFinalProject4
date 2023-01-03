@@ -30,11 +30,12 @@ public class ActivityLevels extends AppCompatActivity {
         fragmentArrayList.add(new ChooseFragment());
         fragmentArrayList.add(new True_FalseFragment());
         fragmentArrayList.add(new CompletFragment());
-puzzelsArrayList=new ArrayList<>();
+         puzzelsArrayList=new ArrayList<>();
 
 //        AdapterViewPager adapterViewPager=new AdapterViewPager(this,fragmentArrayList);
 //        binding.VP.setAdapter(adapterViewPager);
-//
+
+
         viewModel.getAllPuzzles().observe(this, new Observer<List<Puzzles>>() {
             @Override
             public void onChanged(List<Puzzles> puzzles) {
@@ -52,7 +53,7 @@ puzzelsArrayList=new ArrayList<>();
                     int level_no = puzzelsArrayList.get(i).getLevel_id();
                     int  duration = puzzelsArrayList.get(i).getDuration();
                     if (pattern_id == 1) {
-                       fragmentArrayList.add(True_FalseFragment.newInstance(title, trueans, hint, ponits, level_no, duration);
+                      fragmentArrayList.add(True_FalseFragment.newInstance(title, trueans, hint, ponits, level_no, duration));
                     } else if (pattern_id == 2) {
                        fragmentArrayList.add(ChooseFragment.newInstance(title,answer1,answer2,answer3,answer4,trueans,hint,ponits,level_no,duration));
                     } else if (pattern_id == 3) {

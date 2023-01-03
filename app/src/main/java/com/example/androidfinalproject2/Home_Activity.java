@@ -151,45 +151,7 @@ public class Home_Activity extends AppCompatActivity {
                 Log.d("Error_check", "" + level_no);
                 Levels levels = new Levels(level_no, unlock_points);
                 viewModel.insertLevel(levels);
-            }/*
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            ArrayList<question> questionsArrayList = new ArrayList<>();
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            int level_no = jsonObject.getInt("level_no");
-                            JSONArray questions_array = jsonObject.getJSONArray("questions");
-                            for (int j = 0; j < questions_array.length(); j++) {
-                                JSONObject jsonObject1 = questions_array.getJSONObject(j);
-                                int id = jsonObject1.getInt("id");
-                                String title = jsonObject1.getString("title");
-                                String answer_1 = jsonObject1.getString("answer_1");
-                                String answer_2 = jsonObject1.getString("answer_2");
-                                String answer_3 = jsonObject1.getString("answer_3");
-                                String answer_4 = jsonObject1.getString("answer_4");
-                                String true_answer = jsonObject1.getString("true_answer");
-                                int points = jsonObject1.getInt("points");
-                                int duration = jsonObject1.getInt("duration");
-                                String hint = jsonObject1.getString("hint");
-                                JSONObject jsonobjectpattern = jsonObject1.getJSONObject("pattern");
-                                int pattern_id = jsonobjectpattern.getInt("pattern_id");
-                                String pattern_name = jsonobjectpattern.getString("pattern_name");
-                                viewModel.insertPattern(new Pattern(pattern_id, pattern_name));
-                                Log.d("databaseTest", "onCreate : in here" + pattern_id + pattern_name);
-//                                Puzzles puzzle = new Puzzles(title, answer_1, answer_2,
-//                                        answer_3, answer_4, true_answer, points
-//                                        , level_no, duration, pattern_id, hint);
-//                                viewModel.insertPuzzles(puzzle);
-                            }
-                        }
-                    } catch (JSONException c) {
-                        System.out.println(c.getMessage());
-                    }
-
-                }
-            }, 5000);*/
+            }
 
         } catch (
                 JSONException e) {

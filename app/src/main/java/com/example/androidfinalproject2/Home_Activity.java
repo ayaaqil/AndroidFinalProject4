@@ -37,6 +37,7 @@ public class Home_Activity extends AppCompatActivity {
     ViewModel viewModel;
     JSONArray jsonArray;
     List<Levels> levelsList;
+    String jsonString;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -52,9 +53,24 @@ public class Home_Activity extends AppCompatActivity {
             @Override
             public void onChanged(List<Levels> levels) {
 
-                if (levels.size() < 0) {
-                    String jsonString = UtilString.readFormats(getApplicationContext(), "puzzleGameData.json");
+                if (levels.size() <= 0) {
+                    jsonString = UtilString.readFormats(getApplicationContext(), "puzzleGameData.json");
                     parsejsonstring(jsonString);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            add_petterns();
+
+                        }
+                    }, 1000);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            add_puzzle();
+
+                        }
+                    }, 3000);
+
                 } else {
                     levelsList = levels;
                 }
@@ -122,21 +138,20 @@ public class Home_Activity extends AppCompatActivity {
         });
 
 
-
     }
 
     private void parsejsonstring(String jsonString) {
         try {
             jsonArray = new JSONArray(jsonString);
             for (int i = 0; i < jsonArray.length(); i++) {
-                ArrayList<question> questionsArrayList = new ArrayList<>();
+                // ArrayList<question> questionsArrayList = new ArrayList<>();
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 int level_no = jsonObject.getInt("level_no");
                 int unlock_points = jsonObject.getInt("unlock_points");
                 Log.d("Error_check", "" + level_no);
                 Levels levels = new Levels(level_no, unlock_points);
                 viewModel.insertLevel(levels);
-            }
+            }/*
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -163,17 +178,18 @@ public class Home_Activity extends AppCompatActivity {
                                 String pattern_name = jsonobjectpattern.getString("pattern_name");
                                 viewModel.insertPattern(new Pattern(pattern_id, pattern_name));
                                 Log.d("databaseTest", "onCreate : in here" + pattern_id + pattern_name);
-                                Puzzles puzzle = new Puzzles(title, answer_1, answer_2,
-                                        answer_3, answer_4, true_answer, points
-                                        , level_no, duration, pattern_id, hint);
-                                viewModel.insertPuzzles(puzzle);
+//                                Puzzles puzzle = new Puzzles(title, answer_1, answer_2,
+//                                        answer_3, answer_4, true_answer, points
+//                                        , level_no, duration, pattern_id, hint);
+//                                viewModel.insertPuzzles(puzzle);
                             }
                         }
                     } catch (JSONException c) {
                         System.out.println(c.getMessage());
                     }
+
                 }
-            }, 5000);
+            }, 5000);*/
 
         } catch (
                 JSONException e) {
@@ -182,6 +198,85 @@ public class Home_Activity extends AppCompatActivity {
 
 
     }
+
+    void add_petterns() {
+        JSONArray jsonArray = null;
+        Log.d("jsonString", jsonString.toString());
+        try {
+            jsonArray = new JSONArray(jsonString);
+//            ArrayList<questions> questionsArrayList = new ArrayList<>();
+            for (int i = 0; i < jsonArray.length(); i++) {
+//                ArrayList<questions> questions = new ArrayList<>();
+
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+
+                int level_no = jsonObj.getInt("level_no");
+                int unlock_points = jsonObj.getInt("unlock_points");
+                JSONArray jsonArray2 = jsonObj.getJSONArray("questions");
+                for (int j = 0; j < jsonArray2.length(); j++) {
+                    JSONObject jsonObj1 = jsonArray2.getJSONObject(j);
+                    int id = jsonObj1.getInt("id");
+                    String title = jsonObj1.getString("title");
+                    String answer_1 = jsonObj1.getString("answer_1");
+                    String answer_2 = jsonObj1.getString("answer_2");
+                    String answer_3 = jsonObj1.getString("answer_3");
+                    String answer_4 = jsonObj1.getString("answer_4");
+                    String true_answer = jsonObj1.getString("true_answer");
+                    int points = jsonObj1.getInt("points");
+                    int duration = jsonObj1.getInt("duration");
+                    String hint = jsonObj1.getString("hint");
+                    JSONObject jsonObjectpattern = jsonObj1.getJSONObject("pattern");
+                    int pattern_id = jsonObjectpattern.getInt("pattern_id");
+                    String pattern_name = jsonObjectpattern.getString("pattern_name");
+                    Pattern pattern = new Pattern(pattern_id, pattern_name);
+                    viewModel.insertPattern(pattern);
+
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void add_puzzle() {
+        JSONArray jsonArray = null;
+        Log.d("jsonString", jsonString.toString());
+        try {
+            jsonArray = new JSONArray(jsonString);
+//            ArrayList<questions> questionsArrayList = new ArrayList<>();
+            for (int i = 0; i < jsonArray.length(); i++) {
+//                ArrayList<questions> questions = new ArrayList<>();
+
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+
+                int level_no = jsonObj.getInt("level_no");
+                int unlock_points = jsonObj.getInt("unlock_points");
+                JSONArray jsonArray2 = jsonObj.getJSONArray("questions");
+                for (int j = 0; j < jsonArray2.length(); j++) {
+                    JSONObject jsonObj1 = jsonArray2.getJSONObject(j);
+                    int id = jsonObj1.getInt("id");
+                    String title = jsonObj1.getString("title");
+                    String answer_1 = jsonObj1.getString("answer_1");
+                    String answer_2 = jsonObj1.getString("answer_2");
+                    String answer_3 = jsonObj1.getString("answer_3");
+                    String answer_4 = jsonObj1.getString("answer_4");
+                    String true_answer = jsonObj1.getString("true_answer");
+                    int points = jsonObj1.getInt("points");
+                    int duration = jsonObj1.getInt("duration");
+                    String hint = jsonObj1.getString("hint");
+                    JSONObject jsonObjectpattern = jsonObj1.getJSONObject("pattern");
+                    int pattern_id = jsonObjectpattern.getInt("pattern_id");
+                    viewModel.insertPuzzles(new Puzzles(title, answer_1, answer_2, answer_3, answer_4,
+                            true_answer, points, level_no, duration, pattern_id, hint));
+
+                }
+            }
+        } catch (JSONException c) {
+            System.out.println(c.getMessage());
+        }
+    }
+
+
 
     @Override
     public void onBackPressed() {

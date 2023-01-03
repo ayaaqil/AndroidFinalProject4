@@ -11,9 +11,12 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
+import com.example.androidfinalproject2.RoomDataBase.DataConvirter;
 import com.example.androidfinalproject2.RoomDataBase.Users;
 import com.example.androidfinalproject2.RoomDataBase.ViewModel;
 import com.example.androidfinalproject2.databinding.ActivityMainBinding;
@@ -33,27 +36,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
 //        viewModel =new ViewModelProvider(this).get(ViewModel.class);
-        viewModel=new ViewModelProvider(this).get(ViewModel.class);
+        viewModel = new ViewModelProvider(this).get(ViewModel.class);
         viewModel.getAllUser().observe(this, new Observer<List<Users>>() {
             @Override
             public void onChanged(List<Users> users) {
                 for (int i = 0; i < users.size(); i++) {
-                    String name=users.get(i).getUserName();
-                    Date date= users.get(i).getBirthDate();
-                    String email=users.get(i).getEmail();
+                    String name = users.get(i).getUserName();
+//                    Date date = users.get(i).getBirthDate();
+                    String email = users.get(i).getEmail();
                     binding.etName.setText(name);
                     binding.etEmailaddress.setText(email);
-                    binding.etBirth.setText((CharSequence) date);
+//                    binding.etBirth.setText((CharSequence) date);
 
                 }
             }
         });
-
 
 
 //        String name=binding.etName.getText().toString();
@@ -66,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
 //        viewModel.insertUser(users);
 //        viewModel.insertUser(users);
 //
-
-
 
 
         ActivityResultLauncher<String> arl =
@@ -84,53 +84,56 @@ public class MainActivity extends AppCompatActivity {
                 arl.launch("image/*");
             }
         });
-        Calendar calendar  =Calendar.getInstance();
-        final int year=calendar.get(Calendar.YEAR);
-        final int month=calendar.get(Calendar.MONTH);
-        final int day=calendar.get(Calendar.DAY_OF_MONTH);
-
+        Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+        final Date[] dob = new Date[1];
         binding.etBirth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog dialog=new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        i1=month+1;
-                        String data=day+"/"+month+"/"+year;
+                        i1 = month + 1;
+                        String data = day + "/" + month + "/" + year;
                         binding.etBirth.setText(data);
-
+                        dob[0] = new Date(year, month, day);
                     }
-                },year,month,day);
+                }, year, month, day);
                 dialog.show();
             }
         });
-      binding.btnSave.setOnClickListener(new View.OnClickListener() {
-          @Override
-           public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),Home_Activity.class);
-               startActivity(intent);
+        binding.btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-                if (!etEmailaddress.matches(emailPattern)) {
-                    binding.etEmailaddress.setError("Invalid email address");
-                    return;
-                }
-
+                Intent intent = new Intent(getBaseContext(), Home_Activity.class);
+                startActivity(intent);
+//                String name = binding.etName.getText().toString();
+//                String emil = binding.etEmailaddress.getText().toString();
+//
+//
+//                if (!etEmailaddress.matches(emailPattern)) {
+//                    binding.etEmailaddress.setError("Invalid email address");
+//                    return;
+//                }
 
 
             }
         });
 
-      binding.btnSave.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
+        binding.btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
-              Intent intent=new Intent(getBaseContext(),Home_Activity.class);
-              startActivity(intent);
-          }
-      });
-
+                Intent intent = new Intent(getBaseContext(), Home_Activity.class);
+                startActivity(intent);
             }
-
+        });
 
     }
+
+
+}

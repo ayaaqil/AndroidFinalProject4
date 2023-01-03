@@ -25,7 +25,7 @@ public class CompletFragment extends Fragment {
     }
 
 
-    public static CompletFragment newInstance(String param1, String param2) {
+    public static CompletFragment newInstance(String title, String param1, String param2, int ponits, int level_no, int duration) {
         CompletFragment fragment = new CompletFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);

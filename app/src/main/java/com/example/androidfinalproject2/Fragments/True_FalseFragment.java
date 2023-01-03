@@ -24,7 +24,7 @@ public class True_FalseFragment extends Fragment {
     }
 
 
-    public static True_FalseFragment newInstance(String param1, String param2) {
+    public static True_FalseFragment newInstance(String title, String param1, String param2, int ponits, int level_no, int duration) {
         True_FalseFragment fragment = new True_FalseFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);

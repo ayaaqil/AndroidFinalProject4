@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
 import java.util.Date;
+
 @Entity
 @TypeConverters({DataConvirter.class})
 
@@ -13,23 +14,23 @@ public class Users {
     int userId;
     String userName;
     String email;
-    Date birthDate;
+//    Date birthDate;
 //    String gender;
 //    String country;
 
-    public Users(int userId, String userName, String email, Date birthDate) {
+    public Users(int userId, String userName, String email) {
         this.userId = userId;
         this.userName = userName;
         this.email = email;
-        this.birthDate = birthDate;
+//        this.birthDate = birthDate;
 //        this.gender = gender;
 //        this.country = country;
     }
 
-    public Users(String userName, String email, Date birthDate) {
+    public Users(String userName, String email) {
         this.userName = userName;
         this.email = email;
-        this.birthDate = birthDate;
+//        this.birthDate = birthDate;
 //        this.gender = gender;
 //        this.country = country;
     }
@@ -62,13 +63,13 @@ public class Users {
         this.email = email;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
+//    public Date getBirthDate() {
+//        return birthDate;
+//    }
+//
+//    public void setBirthDate(Date birthDate) {
+//        this.birthDate = birthDate;
+//    }
 
 //    public String getGender() {
 //        return gender;

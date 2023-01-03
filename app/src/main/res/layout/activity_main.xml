@@ -1,142 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="vertical"
-    android:background="#529EA8"
+
     tools:context=".MainActivity">
-    <ImageView
-
-        android:layout_width="100dp"
-        android:id="@+id/imge_main"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/profile_"
-        android:backgroundTint="@color/white"
-       />
-
-
-    <EditText
-        android:id="@+id/et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/shape_et"
-        android:ems="10"
-        android:hint="@string/full_name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:textColor="@color/black"
-        android:textColorHint="#F6F8FA"
-        tools:ignore="TouchTargetSizeCheck" />
-
-
-    <EditText
-        android:id="@+id/et_emailaddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/shape_et"
-        android:ems="10"
-        android:hint="@string/email_address"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:textColor="@color/black"
-        android:textColorHint="#F6F8FA" />
-
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_birth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/shape_et"
-        android:ems="10"
-        android:enabled="true"
-        android:hint="@string/birthdate"
-        android:inputType="date"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:textColor="@color/black"
-        android:textColorHint="#F6F8FA"
-        android:textStyle="bold" />
-
-
     <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="#529EA8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+        <ImageView
+
+            android:layout_width="100dp"
+            android:id="@+id/imge_main"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/profile_"
+            android:backgroundTint="@color/white"
+            />
 
 
-        <Spinner
-            android:id="@+id/spinner"
+        <EditText
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/shape_et"
-            android:entries="@array/country"
+            android:ems="10"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
             android:textColorHint="#F6F8FA"
+            tools:ignore="TouchTargetSizeCheck" />
 
-            android:paddingStart="20dp" />
 
-        <RadioGroup
+        <EditText
+            android:id="@+id/et_emailaddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_et"
+            android:ems="10"
+            android:hint="@string/email_address"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#F6F8FA" />
 
-            <RadioButton
-                android:id="@+id/rb_male"
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_et"
+            android:ems="10"
+            android:enabled="true"
+            android:hint="@string/birthdate"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#F6F8FA"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/male"
-                android:textColor="#FAFBFB"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:id="@+id/rb_famale"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/shape_et"
+                android:entries="@array/country"
                 android:minHeight="48dp"
-                android:text="@string/female"
-                android:textColor="#F9FCFD"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                android:textColorHint="#F6F8FA"
 
-        </RadioGroup>
+                android:paddingStart="20dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginTop="50dp">
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:textColor="#FAFBFB"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/rb_famale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="@string/female"
+                    android:textColor="#F9FCFD"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:backgroundTint="#BC466E"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:text="@string/save"
+            android:textColor="#F5F7F8"
+            android:textColorHint="#4A58AA"
+            android:textSize="20sp"
+
+            tools:ignore="TouchTargetSizeCheck" />
+
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_save"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:backgroundTint="#BC466E"
-        android:gravity="center"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:text="@string/save"
-        android:textColor="#F5F7F8"
-        android:textColorHint="#4A58AA"
-        android:textSize="20sp"
-
-        tools:ignore="TouchTargetSizeCheck" />
-
-
-</LinearLayout>
+</ScrollView>
